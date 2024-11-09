@@ -29,6 +29,7 @@ cp -r i3/ /home/tofu/.config
 yes | yay -S gnome-keyring
 yes | yay -S microsoft-edge-stable
 yes | yay -S visual-studio-code-bin
+yes | yay -S jdk21-openjdk
 
 yes | yay -S docker
 gpasswd -a tofu docker
