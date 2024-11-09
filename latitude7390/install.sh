@@ -23,6 +23,7 @@ echo "GLFW_IM_MODULE=ibus" >> /etc/environment
 yes | yay -S autotiling
 cp -r i3/ /home/tofu/.config
 
+yes | yay -S gnome-keyring
 yes | yay -S microsoft-edge-stable
 yes | yay -S visual-studio-code-bin
 
