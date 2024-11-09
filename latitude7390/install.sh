@@ -1,5 +1,8 @@
 cp 30-touchpad.conf /usr/share/X11/xorg.conf.d
 
+yes | yay -S acpilight
+gpasswd -a tofu video
+
 yes | yay -S micro
 yes | yay -S xclip
 
