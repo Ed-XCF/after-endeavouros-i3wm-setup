@@ -1,4 +1,5 @@
 yes | yay -S acpilight
+yes | yay -S btop
 
 yes | yay -S micro
 yes | yay -S xclip
