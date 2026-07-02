@@ -28,4 +28,5 @@ yes | yay -S jdk21-openjdk
 yes | yay -S docker
 yes | yay -S docker-compose
 
+yes | yay -S npm
 yes | yay -S claude-code
