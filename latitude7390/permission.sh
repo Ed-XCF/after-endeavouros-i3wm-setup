@@ -1,3 +1,5 @@
+set -e
+
 gpasswd -a tofu video
 gpasswd -a tofu input
 # newgrp input

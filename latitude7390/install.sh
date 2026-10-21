@@ -1,3 +1,14 @@
+set -e
+
+set_env_var() {
+    local key="$1" value="$2"
+    if grep -qE "^[[:space:]]*${key}=" /etc/environment; then
+        sudo sed -i -E "s|^[[:space:]]*${key}=.*|${key}=${value}|" /etc/environment
+    else
+        printf '%s=%s\n' "$key" "$value" | sudo tee -a /etc/environment >/dev/null
+    fi
+}
+
 yes | yay -S acpilight
 yes | yay -S btop
 
@@ -12,11 +23,11 @@ yes | yay -S fcitx5-gtk
 yes | yay -S fcitx5-qt
 yes | yay -S fcitx5-lua
 yes | yay -S fcitx5-chinese-addons
-echo "GTK_IM_MODULE=fcitx" >> /etc/environment
-echo "QT_IM_MODULE=fcitx" >> /etc/environment
-echo "XMODIFIERS=@im=fcitx" >> /etc/environment
-echo "SDL_IM_MODULE=fcitx" >> /etc/environment
-echo "GLFW_IM_MODULE=ibus" >> /etc/environment
+set_env_var GTK_IM_MODULE fcitx
+set_env_var QT_IM_MODULE fcitx
+set_env_var XMODIFIERS @im=fcitx
+set_env_var SDL_IM_MODULE fcitx
+set_env_var GLFW_IM_MODULE ibus
 
 yes | yay -S autotiling
 
