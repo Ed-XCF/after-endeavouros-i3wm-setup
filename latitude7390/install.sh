@@ -14,6 +14,7 @@ yes | yay -S btop
 
 yes | yay -S micro
 yes | yay -S xclip
+yes | yay -S noto-fonts-cjk
 
 yes | yay -S ruby-fusuma
 
