@@ -10,6 +10,7 @@ set_env_var() {
 }
 
 yes | yay -S acpilight
+yes | yay -S xorg-xbacklight
 yes | yay -S btop
 
 yes | yay -S micro
