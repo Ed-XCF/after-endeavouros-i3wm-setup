@@ -18,6 +18,7 @@ yes | yay -S xclip
 yes | yay -S noto-fonts-cjk
 
 yes | yay -S ruby-fusuma
+yes | yay -S libinput-tools
 
 yes | yay -S fcitx5
 yes | yay -S fcitx5-configtool
