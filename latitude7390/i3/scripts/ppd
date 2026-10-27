@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# i3blocks: icon-only indicator for the current power-profiles-daemon profile.
+# Left click opens the profile menu (power-profiles); normal runs only print status.
+
+if [[ "${BLOCK_BUTTON:-}" == "1" ]]; then
+    exec "$HOME/.config/i3/scripts/power-profiles"
+fi
+
+profile=$(powerprofilesctl get 2>/dev/null) || exit 1
+
+case "$profile" in
+    performance)
+        icon=$''
+        color="#f5c542"   # lightning yellow
+        ;;
+    balanced)
+        icon=$''
+        color="#d8dee9"   # silver white
+        ;;
+    power-saver)
+        icon=$''
+        color="#7cb342"   # leaf green
+        ;;
+    *)
+        icon=$''
+        color="#b0b5bd"   # grey fallback
+        ;;
+esac
+
+printf "<span color='%s'>%s</span>\n" "$color" "$icon"
